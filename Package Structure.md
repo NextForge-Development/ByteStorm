@@ -66,7 +66,7 @@ gg.nextforge.bytestorm
 │
 ├── sdk                         # Cross-Platform SDK (Server + Proxy)
 │   ├── platform
-│   │   ├── api                 # minimale, plattformneutrale Facades
+│   │   ├── api                 # minimal, plattformneutral Facades
 │   │   ├── paper
 │   │   ├── spigot
 │   │   ├── purpur
