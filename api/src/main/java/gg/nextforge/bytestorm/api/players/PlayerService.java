@@ -1,12 +1,13 @@
 package gg.nextforge.bytestorm.api.players;
 
+import gg.nextforge.bytestorm.api.services.Service;
 import lombok.NonNull;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public interface PlayerService {
+public interface PlayerService extends Service {
     Optional<CloudPlayer> byId(@NonNull PlayerId id);
     default Optional<CloudPlayer> byUniqueId(@NonNull UUID id){ return byId(new PlayerId(id)); }
     Optional<CloudPlayer> byName(@NonNull String name);

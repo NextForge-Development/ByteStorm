@@ -1,11 +1,12 @@
 package gg.nextforge.bytestorm.api.templates;
 
+import gg.nextforge.bytestorm.api.services.Service;
 import lombok.NonNull;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-public interface TemplateService {
+public interface TemplateService extends Service {
     Optional<Template> byId(@NonNull TemplateId id);
     Optional<Template> byName(@NonNull String name);
     Collection<Template> all();

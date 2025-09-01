@@ -1,8 +1,7 @@
-package gg.nextforge.bytestorm.core.services;
+package gg.nextforge.bytestorm.api.services;
 
 import gg.nextforge.bytestorm.common.logging.LogFactory;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;

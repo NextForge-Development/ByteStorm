@@ -1,12 +1,13 @@
 package gg.nextforge.bytestorm.api.servers;
 
+import gg.nextforge.bytestorm.api.services.Service;
 import lombok.NonNull;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-public interface ServerService {
+public interface ServerService extends Service {
     Optional<CloudServer> byId(@NonNull ServerId id);
     Optional<CloudServer> byName(@NonNull String name);
     Optional<List<CloudServer>> byGroup(@NonNull String group);

@@ -1,12 +1,13 @@
 package gg.nextforge.bytestorm.api.groups;
 
+import gg.nextforge.bytestorm.api.services.Service;
 import lombok.NonNull;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
-public interface GroupService {
+public interface GroupService extends Service {
     Optional<ServerGroup> byId(@NonNull GroupId id);
     Optional<ServerGroup> byName(@NonNull String name);
     Optional<List<ServerGroup>> byType(@NonNull GroupType type);

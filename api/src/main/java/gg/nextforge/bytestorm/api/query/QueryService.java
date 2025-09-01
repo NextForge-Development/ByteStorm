@@ -3,10 +3,11 @@ package gg.nextforge.bytestorm.api.query;
 import gg.nextforge.bytestorm.api.players.CloudPlayer;
 import gg.nextforge.bytestorm.api.servers.CloudServer;
 import gg.nextforge.bytestorm.api.groups.ServerGroup;
+import gg.nextforge.bytestorm.api.services.Service;
 
 import java.util.concurrent.CompletableFuture;
 
-public interface QueryService {
+public interface QueryService extends Service {
     QueryResult<CloudPlayer> players(QuerySpec spec);
     QueryResult<CloudServer> servers(QuerySpec spec);
     QueryResult<ServerGroup> groups(QuerySpec spec);

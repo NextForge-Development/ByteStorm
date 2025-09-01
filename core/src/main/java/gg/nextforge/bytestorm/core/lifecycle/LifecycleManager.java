@@ -2,10 +2,9 @@ package gg.nextforge.bytestorm.core.lifecycle;
 
 import gg.nextforge.bytestorm.common.config.ConfigService;
 import gg.nextforge.bytestorm.common.logging.LogFactory;
-import gg.nextforge.bytestorm.core.services.ServiceRegistry;
+import gg.nextforge.bytestorm.api.services.ServiceRegistry;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @RequiredArgsConstructor
 public final class LifecycleManager {

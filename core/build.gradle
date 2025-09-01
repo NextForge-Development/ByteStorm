@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation project(':common')
+    implementation project(':api')
     implementation(platform("org.slf4j:slf4j-bom:2.0.13"))
     implementation 'org.slf4j:slf4j-api'
     runtimeOnly 'ch.qos.logback:logback-classic:1.5.6'
