@@ -4,9 +4,6 @@
     <h1>Contribution guidelines for ByteStorm (Minecraft Cloud System)</h1>
 </div>
 
-
----
-
 Thank you for your interest in contributing to ByteStorm! Please follow these guidelines to ensure a smooth process.
 
 ## General
