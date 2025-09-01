@@ -1,8 +1,10 @@
-<center>
-  <img width="500" height="500" alt="logo_transparent" src="https://github.com/user-attachments/assets/70111b6b-8be6-4af8-8c82-640d5d7367e1" />
-</center>
+<p align="center">
+    <img alt="ByteStorm Logo" height="175" src="assets/img/logo_transparent.png" title="ByteStorm Logo" width="175" />
+    <br>
+    <h1>Contribution guidelines for ByteStorm (Minecraft Cloud System)</h1>
+</p>
 
-# Contribution guidelines for ByteStorm (Minecraft Cloud System)
+---
 
 Thank you for your interest in contributing to ByteStorm! Please follow these guidelines to ensure a smooth process.
 
