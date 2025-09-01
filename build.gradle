@@ -1,20 +1,47 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group = 'gg.nextforge'
-version = '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
+ext {
+    junitVersion = '5.10.2'
+    lombokVersion = '1.18.38'
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+allprojects {
+    group = 'gg.nextforge.bytestorm'
+    version = '0.1.0-SNAPSHOT'
 }
 
-test {
-    useJUnitPlatform()
+
+subprojects {
+    apply plugin: 'java'
+
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+        withSourcesJar()
+    }
+
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+        testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+        testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+    }
+
+
+    test {
+        useJUnitPlatform()
+    }
 }

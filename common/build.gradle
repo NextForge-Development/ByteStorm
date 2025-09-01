@@ -1,0 +1,9 @@
+plugins {
+    id 'java-library'
+}
+
+
+dependencies {
+    api(platform("org.slf4j:slf4j-bom:2.0.13"))
+    api 'org.slf4j:slf4j-api'
+}

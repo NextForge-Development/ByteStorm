@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    api project(":common")
+    api project(":core")
+
+    api platform('org.slf4j:slf4j-bom:2.0.13')
+    api 'org.slf4j:slf4j-api'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
