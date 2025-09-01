@@ -1,8 +1,9 @@
-<p align="center">
+<div align="center">
     <img alt="ByteStorm Logo" height="175" src="assets/img/logo_transparent.png" title="ByteStorm Logo" width="175" />
     <br>
     <h1>Contribution guidelines for ByteStorm (Minecraft Cloud System)</h1>
-</p>
+</div>
+
 
 ---
 
