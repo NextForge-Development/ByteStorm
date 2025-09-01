@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class TemplateServiceImpl implements TemplateService {
-    private final Map<String, Template> templates = new ConcurrentHashMap<>();
+    private Map<String, Template> templates;
 
     public Template add(Template template) {
         return templates.put(template.name(), template);
@@ -28,5 +28,15 @@ public final class TemplateServiceImpl implements TemplateService {
     @Override
     public Collection<Template> all() {
         return Collections.unmodifiableCollection(templates.values());
+    }
+
+    @Override
+    public void start() throws Exception {
+        this.templates = new ConcurrentHashMap<>();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        this.templates.clear();
     }
 }

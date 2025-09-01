@@ -47,4 +47,14 @@ public class GroupServiceImpl implements GroupService {
     public Collection<ServerGroup> all() {
         return Collections.unmodifiableCollection(serverGroups.values());
     }
+
+    @Override
+    public void start() throws Exception {
+        // Initial setup if needed
+    }
+
+    @Override
+    public void stop() throws Exception {
+        serverGroups.clear();
+    }
 }

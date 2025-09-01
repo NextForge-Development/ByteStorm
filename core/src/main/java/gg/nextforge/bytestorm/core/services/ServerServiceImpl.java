@@ -11,7 +11,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerServiceImpl implements ServerService {
-    private final Map<String, CloudServer> cloudServers = new ConcurrentHashMap<>();
+    private Map<String, CloudServer> cloudServers;
+
     private final GroupServiceImpl groupService;
 
     public ServerServiceImpl(GroupServiceImpl groupService) {
@@ -53,5 +54,15 @@ public class ServerServiceImpl implements ServerService {
     @Override
     public Collection<CloudServer> all() {
         return Collections.unmodifiableCollection(cloudServers.values());
+    }
+
+    @Override
+    public void start() throws Exception {
+        cloudServers = new ConcurrentHashMap<>();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        cloudServers.clear();
     }
 }
