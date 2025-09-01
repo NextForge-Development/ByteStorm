@@ -37,7 +37,7 @@ public class ConfigService {
         return source.getStringArray(key).orElseThrow(() -> new IllegalStateException("Missing config: " + key));
     }
 
-    public <T> T getEnum(@NonNull String key, @NonNull Class<T> enumType) {
+    public <T extends Enum<?>> T getEnum(@NonNull String key, @NonNull Class<T> enumType) {
         return source.getEnum(key, enumType).orElseThrow(() -> new IllegalStateException("Missing config: " + key));
     }
 
@@ -59,7 +59,7 @@ public class ConfigService {
 
     public String[] getStringArrayOrDefault(@NonNull String key, @NonNull String[] def) { return source.getStringArrayOrDefault(key, def); }
 
-    public <T> T getEnumOrDefault(@NonNull String key, @NonNull Class<T> enumType, @NonNull T def) { return source.getEnumOrDefault(key, enumType, def); }
+    public <T extends Enum<?>> T getEnumOrDefault(@NonNull String key, @NonNull Class<T> enumType, @NonNull T def) { return source.getEnumOrDefault(key, enumType, def); }
 
     public <T> T getObjectOrDefault(@NonNull String key, @NonNull Class<T> type, @NonNull T def) { return source.getObjectOrDefault(key, type, def); }
 

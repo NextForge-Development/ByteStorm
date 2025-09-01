@@ -37,7 +37,7 @@ public interface ConfigSource {
 
     default String[] getStringArrayOrDefault(String key, String[] def) { return getStringArray(key).orElse(def); }
 
-    default <T> T getEnumOrDefault(String key, Class<T> enumType, T def) { return getEnum(key, enumType).orElse(def); }
+    default <T extends Enum<?>> T getEnumOrDefault(String key, Class<T> enumType, T def) { return getEnum(key, enumType).orElse(def); }
 
     default <T> T getObjectOrDefault(String key, Class<T> type, T def) { return getObject(key, type).orElse(def); }
 }
