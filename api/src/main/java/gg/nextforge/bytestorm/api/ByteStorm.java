@@ -1,5 +1,6 @@
 package gg.nextforge.bytestorm.api;
 
+import gg.nextforge.bytestorm.api.error.NotInitializedException;
 import lombok.NonNull;
 import java.util.Objects;
 

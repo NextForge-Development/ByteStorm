@@ -1,7 +1,7 @@
 package gg.nextforge.bytestorm.api;
 
-import gg.nextforge.bytestorm.api.commands.CommandService;
 import gg.nextforge.bytestorm.api.events.EventBus;
+import gg.nextforge.bytestorm.api.groups.GroupService;
 import gg.nextforge.bytestorm.api.permissions.PermissionService;
 import gg.nextforge.bytestorm.api.players.PlayerService;
 import gg.nextforge.bytestorm.api.servers.ServerService;
@@ -17,7 +17,6 @@ public interface ByteStormProvider {
     TemplateService templates();
 
     PermissionService permissions();
-    CommandService commands();
     EventBus events();
 
     QueryService query();
