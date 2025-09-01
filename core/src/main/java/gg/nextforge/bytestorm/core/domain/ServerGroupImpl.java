@@ -27,6 +27,9 @@ public class ServerGroupImpl implements ServerGroup {
 
     @Override
     public String templateName() {
+        if (this.template == null) {
+            throw new IllegalStateException("Template is not set for this ServerGroup.");
+        }
         return this.template.name();
     }
 }
