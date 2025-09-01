@@ -18,14 +18,19 @@ public class GroupServiceImpl implements GroupService {
     private final Map<String, ServerGroup> serverGroups = new ConcurrentHashMap<>();
 
     protected ServerGroup add(@NonNull ServerGroupImpl group) {
-            // Create specified template if it does not exist
-            if (group.templateName() != null && !group.templateName().isEmpty()) {
-                TemplateService templateService = ByteStorm.get().templates();
-                Template newTemplate = templateService.create(group.templateName());
-                templateService.add(newTemplate);
-                template = newTemplate;
+        Template template = null;
+        // Check if specified template exists
+        if (group.templateName() != null && !group.templateName().isEmpty()) {
+            TemplateService templateService = ByteStorm.get().templates();
+            Optional<Template> optTemplate = templateService.byName(group.templateName());
+            if (optTemplate.isPresent()) {
+                template = optTemplate.get();
+            } else {
+                // Template does not exist; handle as needed (e.g., log, throw, or leave as null)
+                // For now, we leave template as null
             }
         }
+        // If needed, assign template to group here
         GroupId id = new GroupId(group.name().toLowerCase());
         group.id(id);
         ServerGroup existing = serverGroups.putIfAbsent(group.name().toLowerCase(), group);
