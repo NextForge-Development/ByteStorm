@@ -13,10 +13,12 @@ public final class EffectiveTemplate {
     public static Template resolve(CloudServer server, ServerGroup group) {
         Objects.requireNonNull(server, "server");
         Objects.requireNonNull(group, "group");
-        Template groupTemplate = ByteStorm.get().templates().byName(group.templateName()).orElse(null);
-        if (groupTemplate == null) {
-            throw new IllegalStateException("Group '" + group.name() + "' has no template");
+        if (server.templateName() != null) {
+            Template serverTemplate = ByteStorm.get().templates().byName(server.templateName()).orElse(null);
+            if (serverTemplate != null) {
+                return serverTemplate;
+            }
         }
-        return ByteStorm.get().templates().byName(group.templateName()).orElse(groupTemplate);
+        return groupTemplate;
     }
 }
