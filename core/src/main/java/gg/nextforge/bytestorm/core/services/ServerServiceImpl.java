@@ -19,7 +19,7 @@ public class ServerServiceImpl implements ServerService {
         this.groupService = groupService;
     }
 
-    public CloudServer add(CloudServerImpl s) {
+    protected CloudServer add(CloudServerImpl s) {
         if (groupService.byName(s.group()) == null)
             throw new IllegalArgumentException("Unknown group: " + s.group());
         String effectiveName = s.group() + "-" + (cloudServers.keySet().stream().filter(str -> str.startsWith(s.group() + "-")).count() + 1);
