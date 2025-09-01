@@ -1,1 +1,3 @@
 rootProject.name = 'ByteStorm'
+include 'common'
+include 'core'
