@@ -3,7 +3,7 @@
 ## 🚀 Information
 
 This project is in an early stage of development and is constantly being refined.
-For the latest information, please check our [Discord](https://discord.gg/your-discord-link) regularly!
+For the latest information, please check our [Discord](https://discord.gg/WBdY4Daty5) regularly!
 To test the cloud, you can create a ticket on our Discord.
 
 > [!IMPORTANT]
@@ -167,7 +167,7 @@ ByteStorm/
 │   └── minestom/ → Minestom connection
 ├── controller/ → CLI & Web server
 ├── agent/ → Remote agent
-├── dashboard/ → Optional admin interface
+├── dashboard/ → external admin interface
 └── README.md → Documentation
 ```
 
@@ -197,7 +197,7 @@ ByteStorm is licensed under the [MIT License](LICENSE).
 
 ## 📞 Contact
 > Do you have questions, ideas, or just want to get involved?
-> Check out our [Discord](https://discord.gg/your-discord-link) or open an issue on GitHub!
+> Check out our [Discord](https://discord.gg/WBdY4Daty5) or open an issue on GitHub!
 
 ---
 
