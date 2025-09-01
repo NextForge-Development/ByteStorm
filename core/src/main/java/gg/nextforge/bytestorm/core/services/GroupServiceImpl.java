@@ -24,7 +24,8 @@ public class GroupServiceImpl implements GroupService {
         }
         GroupId id = new GroupId(group.name().toLowerCase());
         group.id(id);
-        return serverGroups.putIfAbsent(group.name().toLowerCase(), group);
+        ServerGroup existing = serverGroups.putIfAbsent(group.name().toLowerCase(), group);
+        return existing == null ? group : existing;
     }
 
     @Override
