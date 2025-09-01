@@ -1,16 +1,13 @@
-package gg.nextforge.bytestorm.common.config.impl;
+package gg.nextforge.bytestorm.common.config.sources.impl;
 
-import gg.nextforge.bytestorm.common.config.ConfigSource;
+import gg.nextforge.bytestorm.common.config.sources.ConfigSource;
 
-import java.util.Map;
 import java.util.Optional;
 
-public final class EnvConfigSource implements ConfigSource {
-    private final Map<String, String> env = System.getenv();
-
+public final class SystemPropertyConfigSource implements ConfigSource {
     @Override
     public Optional<String> get(String key) {
-        return Optional.ofNullable(env.get(key));
+        return Optional.ofNullable(System.getProperty(key));
     }
 
     @Override
@@ -74,7 +71,7 @@ public final class EnvConfigSource implements ConfigSource {
     }
 
     @Override
-    public <T> Optional<T> getEnum(String key, Class<T> enumType) {
+    public <T extends Enum<?>> Optional<T> getEnum(String key, Class<T> enumType) {
         return get(key).flatMap(v -> {
             try {
                 @SuppressWarnings("unchecked")
@@ -88,7 +85,6 @@ public final class EnvConfigSource implements ConfigSource {
 
     @Override
     public <T> Optional<T> getObject(String key, Class<T> type) {
-        // Environment variables are strings; complex object deserialization is not supported.
-        throw new UnsupportedOperationException("Deserialization of complex objects is not supported from environment variables.");
+        throw new UnsupportedOperationException("Deserialization of complex objects is not supported from system properties.");
     }
 }

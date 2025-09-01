@@ -1,9 +1,8 @@
 package gg.nextforge.bytestorm.common.config;
 
+import gg.nextforge.bytestorm.common.config.sources.ConfigSource;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-
-import java.io.ObjectInputFilter;
 
 @RequiredArgsConstructor
 public class ConfigService {

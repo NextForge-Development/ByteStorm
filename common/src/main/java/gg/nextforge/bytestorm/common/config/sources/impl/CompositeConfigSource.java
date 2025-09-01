@@ -1,6 +1,6 @@
-package gg.nextforge.bytestorm.common.config.impl;
+package gg.nextforge.bytestorm.common.config.sources.impl;
 
-import gg.nextforge.bytestorm.common.config.ConfigSource;
+import gg.nextforge.bytestorm.common.config.sources.ConfigSource;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -89,7 +89,7 @@ public final class CompositeConfigSource implements ConfigSource {
     }
 
     @Override
-    public <T> Optional<T> getEnum(String key, Class<T> enumType) {
+    public <T extends Enum<?>> Optional<T> getEnum(String key, Class<T> enumType) {
         for (ConfigSource source : configSources) {
             Optional<T> value = source.getEnum(key, enumType);
             if (value.isPresent()) {

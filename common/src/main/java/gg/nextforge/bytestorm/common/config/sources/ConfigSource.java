@@ -1,4 +1,4 @@
-package gg.nextforge.bytestorm.common.config;
+package gg.nextforge.bytestorm.common.config.sources;
 
 import java.util.Optional;
 
@@ -19,7 +19,7 @@ public interface ConfigSource {
 
     Optional<String[]> getStringArray(String key);
 
-    <T> Optional<T> getEnum(String key, Class<T> enumType);
+    <T extends Enum<?>> Optional<T > getEnum(String key, Class<T> enumType);
 
     <T> Optional<T> getObject(String key, Class<T> type);
 

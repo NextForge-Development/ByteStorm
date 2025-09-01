@@ -1,9 +1,9 @@
 package gg.nextforge.bytestorm.core;
 
 import gg.nextforge.bytestorm.common.config.*;
-import gg.nextforge.bytestorm.common.config.impl.CompositeConfigSource;
-import gg.nextforge.bytestorm.common.config.impl.EnvConfigSource;
-import gg.nextforge.bytestorm.common.config.impl.SystemPropertyConfigSource;
+import gg.nextforge.bytestorm.common.config.sources.impl.CompositeConfigSource;
+import gg.nextforge.bytestorm.common.config.sources.impl.EnvConfigSource;
+import gg.nextforge.bytestorm.common.config.sources.impl.SystemPropertyConfigSource;
 import gg.nextforge.bytestorm.core.lifecycle.LifecycleManager;
 import gg.nextforge.bytestorm.core.services.ServiceRegistry;
 import org.slf4j.Logger;
