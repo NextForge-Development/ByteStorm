@@ -17,7 +17,7 @@ public class GroupServiceImpl implements GroupService {
 
     private final Map<String, ServerGroup> serverGroups = new ConcurrentHashMap<>();
 
-    public ServerGroup add(@NonNull ServerGroupImpl group) {
+    protected ServerGroup add(@NonNull ServerGroupImpl group) {
             // Create specified template if it does not exist
             if (group.templateName() != null && !group.templateName().isEmpty()) {
                 TemplateService templateService = ByteStorm.get().templates();
